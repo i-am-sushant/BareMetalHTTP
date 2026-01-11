@@ -1,4 +1,4 @@
-# PocketWebd
+#  BareMetlHTTP
 
 A lightweight, no-frills HTTP server in C with just enough funk to be fun—and just enough structure to extend.
 
@@ -56,5 +56,3 @@ Want to level it up? Typical next steps:
 - Keep-alive / better header parsing
 
 ---
-
-If you rename the repo, the README title can be adjusted to match.
