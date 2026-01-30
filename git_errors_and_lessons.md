@@ -1,0 +1,6 @@
+- A `non-fast-forward` push means the remote branch has commits you don’t have locally; Git refuses to overwrite them.
+- The safe fix is to integrate remote changes first: `git fetch` then `git pull --rebase` (or merge), and only then `git push`.
+- During a rebase, Git may pause for conflicts and put you in a detached `HEAD` state; that’s normal—don’t try to `git push` yet.
+- When rebasing and a conflict happens: resolve the file(s), `git add <files>`, then `git rebase --continue` (not a new `git commit` unless you’re amending the paused commit).
+- Your push kept failing because the rebase wasn’t finished, so your main branch hadn’t been updated to include both histories; once `git rebase --continue` completed, main advanced and the push succeeded.
+- To avoid confusion next time: check `git status`—if it says “rebase in progress”, finish (`--continue`) or cancel (`--abort`) before pushing.
